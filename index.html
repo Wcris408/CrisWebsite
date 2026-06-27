@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,88 +8,98 @@
 <style>
 body{
 margin:0;
-font-family:Arial,sans-serif;
-background:linear-gradient(#1b1b1b,#0f4c2c);
+font-family:Arial;
+background:#1a1a1a;
 color:white;
-display:flex;
-justify-content:center;
-align-items:center;
-height:100vh;
-}
-
-.menu{
-background:rgba(0,0,0,0.8);
-padding:40px;
-border-radius:20px;
-width:90%;
-max-width:500px;
 text-align:center;
-box-shadow:0 0 25px lime;
 }
 
-h1{
-color:gold;
-font-size:42px;
-margin-bottom:10px;
+#menu{
+padding-top:100px;
 }
 
-p{
-font-size:18px;
-line-height:1.6;
+#game{
+display:none;
+padding-top:30px;
 }
 
 button{
-margin-top:20px;
-padding:15px 50px;
-font-size:22px;
+padding:15px 30px;
+font-size:20px;
+border:none;
+border-radius:10px;
 background:limegreen;
 color:white;
-border:none;
-border-radius:12px;
+margin:10px;
 cursor:pointer;
-transition:0.3s;
 }
 
-button:hover{
-background:green;
-transform:scale(1.05);
+#player{
+font-size:80px;
 }
 
-.small{
-margin-top:20px;
-font-size:14px;
-color:#ccc;
+#coins{
+font-size:30px;
+color:gold;
 }
 </style>
 
 </head>
-
 <body>
 
-<div class="menu">
+<div id="menu">
 
 <h1>🪙 Bitcoin Farming</h1>
 
 <p>
-Welcome to <b>Bitcoin Farming</b>! Build your own Bitcoin empire by mining coins,
-buying powerful machines, upgrading your farm, and becoming the richest player.
-Can you build the ultimate crypto farm?
+Welcome to Bitcoin Farming! Mine Bitcoin, buy upgrades,
+and become the richest farmer!
 </p>
 
-<button onclick="startGame()">
-▶ PLAY
+<button onclick="playGame()">▶ PLAY</button>
+
+</div>
+
+<div id="game">
+
+<div id="player">🧑‍🌾</div>
+
+<h2>Bitcoin</h2>
+
+<div id="coins">0</div>
+
+<button onclick="mine()">⛏️ Mine</button>
+
+<button onclick="alert('Shop Coming Soon!')">
+🛒 Shop
 </button>
 
-<p class="small">
-Version 0.1 Alpha
-</p>
+<button onclick="alert('Gear Coming Soon!')">
+⚙️ Gear
+</button>
 
 </div>
 
 <script>
-function startGame(){
-alert("The game is coming next! We'll build it step by step.");
+
+let bitcoin=0;
+
+function playGame(){
+
+document.getElementById("menu").style.display="none";
+
+document.getElementById("game").style.display="block";
+
 }
+
+function mine(){
+
+bitcoin++;
+
+document.getElementById("coins").innerHTML=bitcoin;
+
+}
+
 </script>
 
 </body>
