@@ -104,3 +104,54 @@ document.getElementById("coins").innerHTML=bitcoin;
 
 </body>
 </html>
+function mine(){
+
+bitcoin++;
+
+document.getElementById("coins").innerHTML=bitcoin;
+
+}let player = document.getElementById("player");
+
+let x = 100;
+let y = 100;
+
+document.addEventListener("keydown", function(e){
+
+if(e.key=="ArrowUp" || e.key=="w"){
+y -= 10;
+}
+
+if(e.key=="ArrowDown" || e.key=="s"){
+y += 10;
+}
+
+if(e.key=="ArrowLeft" || e.key=="a"){
+x -= 10;
+}
+
+if(e.key=="ArrowRight" || e.key=="d"){
+x += 10;
+}
+
+player.style.left = x + "px";
+player.style.top = y + "px";
+
+});#player{
+position:absolute;
+left:100px;
+top:100px;
+width:40px;
+height:40px;
+background:blue;
+border-radius:8px;
+}#player{
+position:absolute;
+left:100px;
+top:100px;
+font-size:48px;
+width:48px;
+height:48px;
+text-align:center;
+line-height:48px;
+}<div id="player"></div>
+<div id="player">🧑</div>
