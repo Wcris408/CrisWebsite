@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bitcoin Farming</title>
+<style>
+body{
+margin:0;
+font-family:Arial,sans-serif;
+background:#101820;
+color:white;
+text-align:center;
+}
+header{
+background:#0f9d58;
+padding:20px;
+}
+.card{
+background:#1f2937;
+margin:20px;
+padding:20px;
+border-radius:10px;
+max-width:500px;
+margin-left:auto;
+margin-right:auto;
+}
+button{
+background:#fbbc05;
+border:none;
+padding:12px 20px;
+font-size:18px;
+border-radius:8px;
+cursor:pointer;
+}
+#coins{
+font-size:28px;
+color:#fbbc05;
+}
+</style>
+</head>
+<body>
+
+<header>
+<h1>🎮 Bitcoin Farming</h1>
+<p>Mine coins and build your farm!</p>
+</header>
+
+<div class="card">
+<h2>Your Coins</h2>
+<p id="coins">0</p>
+<button onclick="mine()">⛏️ Mine Bitcoin</button>
+</div>
+
+<div class="card">
+<h2>Coming Soon</h2>
+<p>🚜 Buy Farms</p>
+<p>🏭 Upgrade Machines</p>
+<p>💰 Sell Bitcoin</p>
+</div>
+
+<script>
+let coins=0;
+function mine(){
+coins++;
+document.getElementById("coins").innerText=coins;
+}
+</script>
+
+</body>
+</html>
