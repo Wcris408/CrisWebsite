@@ -4,66 +4,91 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Bitcoin Farming</title>
+
 <style>
 body{
 margin:0;
 font-family:Arial,sans-serif;
-background:#101820;
+background:linear-gradient(#1b1b1b,#0f4c2c);
 color:white;
-text-align:center;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
 }
-header{
-background:#0f9d58;
-padding:20px;
-}
-.card{
-background:#1f2937;
-margin:20px;
-padding:20px;
-border-radius:10px;
+
+.menu{
+background:rgba(0,0,0,0.8);
+padding:40px;
+border-radius:20px;
+width:90%;
 max-width:500px;
-margin-left:auto;
-margin-right:auto;
+text-align:center;
+box-shadow:0 0 25px lime;
 }
-button{
-background:#fbbc05;
-border:none;
-padding:12px 20px;
+
+h1{
+color:gold;
+font-size:42px;
+margin-bottom:10px;
+}
+
+p{
 font-size:18px;
-border-radius:8px;
-cursor:pointer;
+line-height:1.6;
 }
-#coins{
-font-size:28px;
-color:#fbbc05;
+
+button{
+margin-top:20px;
+padding:15px 50px;
+font-size:22px;
+background:limegreen;
+color:white;
+border:none;
+border-radius:12px;
+cursor:pointer;
+transition:0.3s;
+}
+
+button:hover{
+background:green;
+transform:scale(1.05);
+}
+
+.small{
+margin-top:20px;
+font-size:14px;
+color:#ccc;
 }
 </style>
+
 </head>
+
 <body>
 
-<header>
-<h1>🎮 Bitcoin Farming</h1>
-<p>Mine coins and build your farm!</p>
-</header>
+<div class="menu">
 
-<div class="card">
-<h2>Your Coins</h2>
-<p id="coins">0</p>
-<button onclick="mine()">⛏️ Mine Bitcoin</button>
-</div>
+<h1>🪙 Bitcoin Farming</h1>
 
-<div class="card">
-<h2>Coming Soon</h2>
-<p>🚜 Buy Farms</p>
-<p>🏭 Upgrade Machines</p>
-<p>💰 Sell Bitcoin</p>
+<p>
+Welcome to <b>Bitcoin Farming</b>! Build your own Bitcoin empire by mining coins,
+buying powerful machines, upgrading your farm, and becoming the richest player.
+Can you build the ultimate crypto farm?
+</p>
+
+<button onclick="startGame()">
+▶ PLAY
+</button>
+
+<p class="small">
+Version 0.1 Alpha
+</p>
+
 </div>
 
 <script>
-let coins=0;
-function mine(){
-coins++;
-document.getElementById("coins").innerText=coins;
+function startGame(){
+alert("The game is coming next! We'll build it step by step.");
 }
 </script>
 
