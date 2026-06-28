@@ -1,1 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Bitcoin Farming</title>
 
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:#58c54d;
+overflow:hidden;
+}
+
+#menu{
+position:fixed;
+left:0;
+top:0;
+width:100%;
+height:100%;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+background:linear-gradient(#2e7d32,#66bb6a);
+color:white;
+}
+
+#menu h1{
+font-size:42px;
+margin-bottom:20px;
+}
+
+#menu p{
+font-size:18px;
+margin-bottom:25px;
+text-align:center;
+padding:10px;
+}
+
+#play{
+padding:16px 45px;
+font-size:22px;
+border:none;
+border-radius:12px;
+background:gold;
+font-weight:bold;
+}
+
+#game{
+display:none;
+width:100vw;
+height:100vh;
+position:relative;
+background:#6ecb63;
+overflow:hidden;
+}
+
+#topbar{
+position:absolute;
+top:10px;
+left:10px;
+right:10px;
+display:flex;
+justify-content:space-between;
+z-index:10;
+}
+
+.panel{
+background:white;
+padding:10px;
+border-radius:10px;
+font-weight:bold;
+box-shadow:0 2px 5px rgba(0,0,0,.3);
+}
+
+#player{
+position:absolute;
+left:120px;
+top:220px;
+font-size:70px;
+transition:.08s;
+}
+
+#ground{
+position:absolute;
+bottom:0;
+width:100%;
+height:180px;
+background:#2e7d32;
+}
+
+#mine{
+position:absolute;
+right:20px;
+bottom:25px;
+padding:18px;
+font-size:20px;
+border:none;
+border-radius:10px;
+background:orange;
+font-weight:bold;
+}
+
+#shop{
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+background:white;
+width:90%;
+max-width:340px;
+padding:15px;
+border-radius:12px;
+display:none;
+max-height:70vh;
+overflow:auto;
+z-index:100;
+}
+
+.card{
+display:flex;
+justify-content:space-between;
+padding:8px;
+border-bottom:1px solid #ddd;
+}
+
+.buy{
+background:#4CAF50;
+color:white;
+border:none;
+padding:6px 10px;
+border-radius:8px;
+}
+
+#close{
+margin-top:10px;
+width:100%;
+padding:10px;
+background:red;
+color:white;
+border:none;
+border-radius:10px;
+}
+
+#joystick{
+position:absolute;
+bottom:20px;
+left:20px;
+width:130px;
+height:130px;
+border-radius:50%;
+background:rgba(255,255,255,.3);
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+#stick{
+width:55px;
+height:55px;
+border-radius:50%;
+background:white;
+}
+
+</style>
+</head>
+
+<body>
+
+<div id="menu">
+
+<h1>🪙 Bitcoin Farming</h1>
+
+<p>Mine Bitcoin and Buy Crypto Cards!</p>
+
+<button id="play">▶ PLAY</button>
+
+</div>
+
+<div id="game">
+
+<div id="topbar">
+
+<div class="panel">
+₿ <span id="btc">0</span>
+</div>
+
+<div class="panel" id="openShop">
+🏪 Shop
+</div>
+
+</div>
+
+<div id="player">
+🧑
+</div>
+
+<div id="ground"></div>
+
+<button id="mine">
+⛏ Mine
+</button>
+
+<div id="joystick">
+<div id="stick"></div>
+</div>
+
+<div id="shop">
+
+<h2>Crypto Card Shop</h2>
